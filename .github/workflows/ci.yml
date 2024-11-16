@@ -48,8 +48,9 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: .ruby-version
-          bundler-cache: true
-
+          bundler-cache: true 
+      - name: Ensure rubocop is executable
+        run: chmod +x bin/ruboco
       - name: Lint code for consistent style
         run: bin/rubocop -f github
 
